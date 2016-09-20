@@ -11,8 +11,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    if @post = Post.create(post_params)
+    flash[:success] = "Thank you for the new post submission!!!"
     redirect_to posts_path
+  else
+    flash.now[:alert] = "Sorry there's been an issue with the submission! Please check and resubmit again."
   end
 
   def show
@@ -25,8 +28,12 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
+    if @post.update(post_params)
+      flash[:success] = "post updated!"
     redirect_to(post_path(@post))
+  else
+    flash.now[:alert] = "Update failed. Please check and try again."
+    render :edit
   end
 
   def destroy
