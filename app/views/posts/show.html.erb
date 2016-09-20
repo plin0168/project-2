@@ -2,7 +2,7 @@
   <div class="post">
     <div class="post-head">
       <div class="name">
-        Ben Walker
+        <!-- username -->
       </div>
     </div>
     <div class="image center-block">
@@ -11,8 +11,10 @@
     <p class="caption">
       <%= @post.caption %>
     </p>
-    <div class="text-center">
+    <div class="text-center edit-links">
       <%= link_to "Cancel", posts_path %>
+      |
+      <%= link_to "Edit Post", edit_post_path(@post) %>
     </div>
   </div>
 </div>
