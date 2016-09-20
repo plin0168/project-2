@@ -1,15 +1,19 @@
 class PostsController < ApplicationController
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  #collects all the posts in your Post model
   def index
     @posts = Post.all
   end
 
+  #create new action and create new file as views/posts/new.html.erb
   def new
     @post = Post.new
   end
 
+  #create new action called create to upload new images
+  #post_params as an argument to create method, must be defined. create it below under private
+  # createing redirect_to method in order to redirect the user to somewhere useful.
   def create
     if @post = Post.create(post_params)
     flash[:success] = "Thank you for the new post submission!!!"
@@ -45,6 +49,7 @@ end
   end
 
   private
+  #defining post_params
   def post_params
     params.require(:post).permit(:image, :caption)
 

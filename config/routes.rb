@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #create resources route for the posts controller
   resources :posts
   #with function index view set up, set index action

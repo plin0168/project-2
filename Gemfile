@@ -1,10 +1,18 @@
 source 'https://rubygems.org'
 
+#Devise gem for authentication.
+gem 'devise'
+
 gem 'bootstrap-sass', '~> 3.3.5'
 
+#add simple_form to Gemfile after creating new file new.html.erb, as a form that will accept the users caption and image
+#simple_form is basically a stack of components taht are invoked to create a complete html input for you
 gem 'simple_form'
+
 #add paperclip gem after you have imagemagick running on your development comp
 gem 'paperclip', '~> 4.2'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
