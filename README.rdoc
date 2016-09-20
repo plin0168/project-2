@@ -1,7 +1,8 @@
-== README
+ReadME
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project name: Photoshare
+
+summary: Photoshare is a 
 
 Things you may want to cover:
 

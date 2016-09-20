@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  #create resources route for the posts controller
   resources :posts
-
+  #with function index view set up, set index action
   root 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
