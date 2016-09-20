@@ -40,3 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     # add_index :users, :unlock_token,         unique: true
   end
 end
+
+# Visit specific paths to create a new user, sign in with a user, log out with a user.
+# Create functionality around letting only signed in users perform certain actions or visit certain areas of our application.
+# Access a range of Devise helper methods. One that will let us refer to the current_userwhen creating, editing and deleting posts.
