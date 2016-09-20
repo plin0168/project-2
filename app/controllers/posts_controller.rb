@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   else
     flash.now[:alert] = "Sorry there's been an issue with the submission! Please check and resubmit again."
   end
+end
 
   def show
     @post = Post.find(params[:id])
@@ -35,13 +36,13 @@ class PostsController < ApplicationController
     flash.now[:alert] = "Update failed. Please check and try again."
     render :edit
   end
+end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
   end
-
 
   private
   def post_params
@@ -51,6 +52,6 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
-
   end
+
 end
