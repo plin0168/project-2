@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   #with function index view set up, set index action
   root 'posts#index'
 
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   # The priority is based upon order of creation: first created -> highest priority.
