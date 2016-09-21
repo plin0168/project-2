@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  # root 'users#index'
+  resources :users
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   # The priority is based upon order of creation: first created -> highest priority.
