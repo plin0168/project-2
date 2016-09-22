@@ -5,7 +5,7 @@
     <div class="post">
       <div class="post-head">
         <div class="name">
-          
+
           <% if logged_in? %>
           <div class="voting">
       <%= link_to 'Upvote', "/posts/#{post.id}/upvote" %> (<%= post.votes.where({sentiment: 1}).count %>)
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="image center-block">
-        <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
+        <%= link_to image_tag(post.image.url(:medium), class:'img-responsive'), post_path(post) %>
       </div>
       <p class="caption">
         <%= post.caption %>

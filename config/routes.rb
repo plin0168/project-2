@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # root 'users#index'
   resources :users
   get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  # post '/users' => 'users#create'
 
   get '/posts/:post_id/upvote' => 'votes#upvote'
 

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2'
 
 gem 'pg', '~> 0.15'
@@ -9,11 +10,11 @@ gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'simple_form'
 #add paperclip gem after you have imagemagick running on your development comp
-gem 'paperclip', '~> 4.2'
+# gem 'paperclip', '~> 4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -53,3 +54,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+gem 'rails_12factor', group: :production
+
+
+ruby "2.3.1"
