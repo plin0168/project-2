@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   #create resources route for the posts controller
   resources :posts
   #with function index view set up, set index action
@@ -7,12 +8,16 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
-  
+
 
   # root 'users#index'
   resources :users
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+  get '/posts/:post_id/upvote' => 'votes#upvote'
+
+  get '/posts/:post_id/downvote' => 'votes#downvote'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
