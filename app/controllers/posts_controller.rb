@@ -11,7 +11,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    if @post = Post.create(post_params)
+    @post = Post.new post_params
+    @post.user = current_user
+    if @post.save
     flash[:success] = "Thank you for the new post submission!!!"
     redirect_to posts_path
   else
@@ -29,6 +31,9 @@ end
 
   def update
     @post = Post.find(params[:id])
+    if @post.user != current_user
+      redirect_to post_path(@post)
+    end
     if @post.update(post_params)
       flash[:success] = "post updated!"
     redirect_to(post_path(@post))
@@ -40,6 +45,9 @@ end
 
   def destroy
     @post = Post.find(params[:id])
+    if @post.user != current_user
+      redirect_to post_path(@post)
+    end
     @post.destroy
     redirect_to posts_path
   end
@@ -47,7 +55,6 @@ end
   private
   def post_params
     params.require(:post).permit(:image, :caption)
-
   end
 
   def set_post
