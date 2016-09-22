@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922175932) do
+ActiveRecord::Schema.define(version: 20160922183818) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "caption"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160922175932) do
     t.integer  "sentiment_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "sentiment"
   end
 
   add_index "votes", ["post_id"], name: "index_votes_on_post_id"

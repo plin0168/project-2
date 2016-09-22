@@ -5,7 +5,13 @@
     <div class="post">
       <div class="post-head">
         <div class="name">
-        
+          
+          <% if logged_in? %>
+          <div class="voting">
+      <%= link_to 'Upvote', "/posts/#{post.id}/upvote" %> (<%= post.votes.where({sentiment: 1}).count %>)
+      <%= link_to 'Downvote', "/posts/#{post.id}/downvote" %> (<%= post.votes.where({sentiment: -1}).count %>)
+          </div>
+          <% end %>
         </div>
       </div>
       <div class="image center-block">
