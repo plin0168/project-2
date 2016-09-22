@@ -3,7 +3,7 @@ class CreateVotes < ActiveRecord::Migration
     create_table :votes do |t|
       t.references :user, index: true, foreign_key: true
       t.references :post, index: true, foreign_key: true
-      t.references :sentiment, index: true, foreign_key: true
+      t.integer :sentiment
 
       t.timestamps null: false
     end
