@@ -16,7 +16,7 @@ InstaShare is a great and simple photo-sharing app very similar to instagram. Si
 * Simple_form (gem)
 * Heroku (web host)
 
-## ERD
+## Layout
 ![Instashare ERB](/Instashare%20ERB.jpg)
 
 
