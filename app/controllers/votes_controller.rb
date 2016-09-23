@@ -19,7 +19,7 @@ class VotesController < ApplicationController
     if @vote
       @vote.sentiment = -1
     else
-      @post = Post.find(params[:story_id])
+      @post = Post.find(params[:post_id])
       @vote = @post.votes.new({sentiment: -1})
       @vote.user = current_user
     end
